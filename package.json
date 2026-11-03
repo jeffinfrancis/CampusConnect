@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  },
+  "scripts": {
+  "server": "npx nodemon server/server.js",
+  "client": "npm run dev --prefix client",
+  "dev": "concurrently \"npm run server\" \"npm run client\""
+}
+}
