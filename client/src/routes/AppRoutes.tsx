@@ -19,6 +19,7 @@ import OrganizerParticipants from "../pages/organizer/OrganizerParticipants";
 import AdminDashboard from "../pages/admin/AdminDashboard";
 import PendingEvents from "../pages/admin/PendingEvents";
 import ManageEvents from "../pages/admin/ManageEvents";
+import BrowseEvents from "../pages/student/BrowseEvents";
 const DashboardHome = () => {
   const { user } = useAuth();
 
@@ -88,7 +89,7 @@ const AppRoutes = () => {
         element={<RoleLayout role="student" />}
       >
         <Route path="dashboard" element={<StudentDashboard />} />
-        <Route path="events" element={<DashboardHome />} />
+        <Route path="events" element={<BrowseEvents />} />
         <Route path="registrations" element={<MyRegistrations />} />
       </Route>
 
