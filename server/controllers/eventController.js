@@ -447,4 +447,21 @@ export const getPendingEvents = async (req, res) => {
   }
 };
 
+// Admin: View all events (approved, pending, rejected)
+export const getAllEventsAdmin = async (req, res) => {
+  try {
+    const events = await Event.find()
+      .populate("organizer", "name email")
+      .sort({ createdAt: -1 });
 
+    res.status(200).json({
+      count: events.length,
+      events,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Failed to retrieve events.",
+      error: error.message,
+    });
+  }
+};

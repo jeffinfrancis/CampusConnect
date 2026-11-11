@@ -10,6 +10,7 @@ import {
   deleteEvent,
   updateEventStatus,
   getPendingEvents,
+  getAllEventsAdmin,
 } from "../controllers/eventController.js";
 
 import {
@@ -35,6 +36,13 @@ router.get(
   authenticate,
   authorizeRoles("organizer", "admin"),
   getMyEvents
+);
+// Admin routes
+router.get(
+  "/admin/all",
+  authenticate,
+  authorizeRoles("admin"),
+  getAllEventsAdmin
 );
 
 router.get("/:id", getEventById);
