@@ -20,6 +20,7 @@ import AdminDashboard from "../pages/admin/AdminDashboard";
 import PendingEvents from "../pages/admin/PendingEvents";
 import ManageEvents from "../pages/admin/ManageEvents";
 import BrowseEvents from "../pages/student/BrowseEvents";
+import EventDetails from "../pages/student/EventDetails";
 const DashboardHome = () => {
   const { user } = useAuth();
 
@@ -82,7 +83,11 @@ const AppRoutes = () => {
             : <Register />
         }
       />
-
+{/* Public event details route */}
+<Route
+  path="/events/:id"
+  element={<EventDetails />}
+/>
       {/* Student routes */}
       <Route
         path="/student"

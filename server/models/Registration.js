@@ -18,7 +18,7 @@ const registrationSchema = new mongoose.Schema(
     },
     status: {
       type: String,
-      enum: ["registered", "cancelled"],
+      enum: ["registered", "waitlisted", "cancelled"],
       default: "registered",
     },
     attendanceStatus: {

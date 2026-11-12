@@ -1,9 +1,11 @@
+
 import express from "express";
 
 import {
   registerForEvent,
   getMyRegistrations,
   cancelRegistration,
+  getEventAvailability,
   getEventParticipants,
   markAttendance,
 } from "../controllers/registrationController.js";
@@ -14,6 +16,12 @@ import {
 } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
+
+// Public route: Check event seat availability
+router.get(
+  "/event/:eventId/availability",
+  getEventAvailability
+);
 
 // Student routes
 router.post(

@@ -43,6 +43,13 @@ const eventSchema = new mongoose.Schema(
       min: 1,
     },
 
+    // Number of students with confirmed seats
+    registeredCount: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
+
     organizer: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",

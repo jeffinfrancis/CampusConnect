@@ -14,6 +14,7 @@ export interface AuthResponse {
   user: User;
 }
 
+
 export interface Event {
   _id: string;
   title: string;
@@ -22,15 +23,17 @@ export interface Event {
   eventDate: string;
   venue: string;
   capacity: number;
+  registeredCount: number;
   organizer: User | string;
   status: "pending" | "approved" | "rejected" | "cancelled";
 }
+
 
 export interface Registration {
   _id: string;
   student: User | string;
   event: Event | string;
   registrationDate: string;
-  status: "registered" | "cancelled";
+  status: "registered" | "waitlisted" | "cancelled";
   attendanceStatus: "not-marked" | "attended" | "absent";
 }

@@ -150,17 +150,56 @@ const BrowseEvents = () => {
                 {event.description}
               </p>
 
-              <div className="browse-event-details">
-                <p>
-                  <strong>Date:</strong> {formatDate(event.eventDate)}
-                </p>
-                <p>
-                  <strong>Venue:</strong> {event.venue}
-                </p>
-                <p>
-                  <strong>Capacity:</strong> {event.capacity}
-                </p>
-              </div>
+              
+<div className="browse-event-details">
+  <p>
+    <strong>Date:</strong> {formatDate(event.eventDate)}
+  </p>
+
+  <p>
+    <strong>Venue:</strong> {event.venue}
+  </p>
+
+  <div className="event-capacity">
+    <div className="event-capacity-info">
+      <span>Total seats: {event.capacity}</span>
+      <span>
+        {event.registeredCount} registered
+      </span>
+    </div>
+
+    <div className="event-capacity-bar">
+      <div
+        className="event-capacity-progress"
+        style={{
+          width: `${
+            event.capacity > 0
+              ? Math.min(
+                  100,
+                  (event.registeredCount / event.capacity) * 100
+                )
+              : 0
+          }%`,
+        }}
+      />
+    </div>
+
+    <p className="event-seats-remaining">
+      {Math.max(
+        0,
+        event.capacity - event.registeredCount
+      )}{" "}
+      seats remaining
+    </p>
+  </div>
+
+  {event.registeredCount >= event.capacity && (
+    <span className="event-full-label">
+      Event Full – Join Waitlist
+    </span>
+  )}
+</div>
+
 
               <Link
                 to={`/events/${event._id}`}

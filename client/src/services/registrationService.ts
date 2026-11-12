@@ -17,6 +17,15 @@ interface ParticipantsResponse {
   participants: Registration[];
 }
 
+export interface EventAvailability {
+  eventId: string;
+  capacity: number;
+  registeredCount: number;
+  availableSeats: number;
+  waitlistedCount: number;
+  isFull: boolean;
+}
+
 // Register for an event
 export const registerForEvent = async (
   eventId: string
@@ -71,6 +80,26 @@ export const markAttendance = async (
   }>(`/registrations/${registrationId}/attendance`, {
     attendanceStatus,
   });
+
+  return response.data;
+};
+
+
+
+
+export const getEventAvailability = async (
+  eventId: string
+): Promise<{
+  event: {
+    _id: string;
+    title: string;
+    eventDate: string;
+  };
+  availability: EventAvailability;
+}> => {
+  const response = await api.get(
+    `/registrations/event/${eventId}/availability`
+  );
 
   return response.data;
 };

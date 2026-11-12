@@ -1,0 +1,263 @@
+
+.event-details-page {
+  padding: 30px 20px;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.event-details-container {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.event-details-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.event-details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.event-category {
+  background: #eff6ff;
+  color: #1d4ed8;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.event-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.event-status.available {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.event-status.full {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.event-details-card h1 {
+  font-size: 30px;
+  color: #1e293b;
+  margin-bottom: 25px;
+}
+
+.event-details-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 22px 0;
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.event-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.event-meta-item > span {
+  font-size: 22px;
+}
+
+.event-meta-item small,
+.availability-numbers small {
+  display: block;
+  color: #64748b;
+  margin-bottom: 6px;
+  font-size: 12px;
+}
+
+.event-meta-item p {
+  color: #334155;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.event-description {
+  padding: 25px 0;
+}
+
+.event-description h2,
+.event-availability h2 {
+  font-size: 19px;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.event-description p {
+  color: #475569;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.event-availability {
+  background: #f8fafc;
+  padding: 22px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.availability-numbers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.availability-numbers strong {
+  font-size: 23px;
+  color: #1e293b;
+}
+
+.availability-progress {
+  width: 100%;
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.availability-progress-fill {
+  height: 100%;
+  background: #16a34a;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+}
+
+.availability-caption {
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.event-registration-action {
+  text-align: center;
+}
+
+.event-action-button {
+  display: inline-block;
+  width: 100%;
+  max-width: 350px;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.event-action-button:hover {
+  background: #1d4ed8;
+}
+
+.event-action-button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+.registration-confirmed,
+.registration-waitlisted {
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.registration-confirmed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.registration-waitlisted {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.registration-confirmed h3,
+.registration-waitlisted h3 {
+  margin-bottom: 6px;
+}
+
+.waitlist-note {
+  color: #92400e;
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.event-success-message {
+  padding: 12px;
+  margin-bottom: 15px;
+  background: #dcfce7;
+  color: #166534;
+  border-radius: 6px;
+}
+
+.event-error-message,
+.event-details-error {
+  padding: 12px;
+  margin-bottom: 15px;
+  background: #fee2e2;
+  color: #991b1b;
+  border-radius: 6px;
+}
+
+.event-details-loading,
+.event-details-error {
+  max-width: 700px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.event-details-loading {
+  color: #475569;
+}
+
+@media (max-width: 700px) {
+  .event-details-card {
+    padding: 20px;
+  }
+
+  .event-details-card h1 {
+    font-size: 24px;
+  }
+
+  .event-details-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .availability-numbers {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
