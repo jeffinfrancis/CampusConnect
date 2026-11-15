@@ -51,7 +51,7 @@ const HomePage = () => {
       {/* Navigation */}
       <nav className="home-navbar">
         <Link to="/" className="home-logo">
-          <GraduationCap  size={27} />
+        <img src="/logo.png" alt="CampusConnect Logo" width={75} height={75} />
           <span>CampusConnect</span>
         </Link>
 
