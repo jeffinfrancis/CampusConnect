@@ -15,18 +15,34 @@
   justify-content: space-between;
   background: white;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  padding: 8px 16px;
 }
 
 .home-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #5b4bdb;
-  font-size: 22px;
-  font-weight: 750;
+  gap: 12px;
   text-decoration: none;
 }
 
+.home-logo img {
+  height: 75px;
+  width: 75px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.home-logo span {
+  display: inline-block;
+  color: #1f2937; 
+  font-weight: 700;
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
 .home-nav-links {
   display: flex;
   align-items: center;

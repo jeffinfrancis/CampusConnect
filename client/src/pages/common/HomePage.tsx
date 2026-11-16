@@ -1,18 +1,21 @@
 
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+
+
 import {
   CalendarDays,
   MapPin,
   ArrowRight,
-  Sparkles,GraduationCap 
+  Sparkles
 } from "lucide-react";
+import "./HomePage.css";
 
 import { getAllEvents } from "../../services/eventService";
 import { useAuth } from "../../context/AuthContext";
 import type { Event } from "../../types";
 
-import "./HomePage.css";
+
 
 const HomePage = () => {
   const { user, isAuthenticated } = useAuth();
@@ -51,7 +54,7 @@ const HomePage = () => {
       {/* Navigation */}
       <nav className="home-navbar">
         <Link to="/" className="home-logo">
-        <img src="/logo.png" alt="CampusConnect Logo" width={75} height={75} />
+        <img src="/logo.png" alt="CampusConnect Logo" />
           <span>CampusConnect</span>
         </Link>
 

@@ -152,14 +152,32 @@ body {
   flex-direction: column;
   padding: 25px 18px;
 }
-
 .sidebar-brand {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  font-size: 20px;
+  text-align: center;
+}
+
+.sidebar-brand img {
+  height: 75px;
+  width: 75px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid rgba(168, 85, 247, 0.6);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.sidebar-brand span {
+  display: inline-block;
+  color: #ffffff;
   font-weight: 700;
-  padding: 0 8px 30px;
+  font-size: 1.25rem;
+  white-space: nowrap;
 }
 
 .sidebar-user {

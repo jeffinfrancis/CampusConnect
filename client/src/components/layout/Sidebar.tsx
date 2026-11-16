@@ -39,11 +39,19 @@ const Sidebar = () => {
   const items = menuItems[user.role];
 
   return (
-    <aside className="sidebar">
-      <div className="sidebar-brand">
-        <GraduationCap size={30} />
-        <span>CampusConnect</span>
-      </div>
+   <aside className="sidebar">
+  <div
+    className="sidebar-brand"
+    style={{
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      gap: "8px",
+    }}
+  >
+    <img src="/logo.png" alt="Logo" width={85} height={85} />
+    <span>CampusConnect</span>
+  </div>
 
       <div className="sidebar-user">
         <div className="user-avatar">
